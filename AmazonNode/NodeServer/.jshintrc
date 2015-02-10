@@ -1,0 +1,29 @@
+{
+  "globals": {
+    "document": false,
+    "event": false,
+    "window": false,
+    "alert": false
+  },
+  "bitwise": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "newcap": true,
+  "noempty": true,
+  "notypeof": true,
+  "noarg": true,
+  "node": true,
+  "quotmark": "single",
+  "regexp": true,
+  "smarttabs": true,
+  "strict": true,
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+  "white": true
+}
