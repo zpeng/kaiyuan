@@ -14,6 +14,7 @@ var request = require('request'),
 
 // browserify.settings.mode = 'production';
 app.get('/admin/home.js', browserify('./admin/home.js'));
+app.get('/client/map.js', browserify('./client/map.js'));
 
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
