@@ -22,4 +22,4 @@ node index.js 8080
 
 http://localhost:8080/index.html
 
-以上端口号根据需要随意改
+以上端口号根据需要随意改.(为什么80端口不能用？)
