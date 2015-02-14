@@ -1,6 +1,6 @@
 #!/bin/bash
 
-START_SCRIPT=~/kaiyuan/AmazonNode/NodeServer/app/ServerWorke/index.js
+START_SCRIPT=~/kaiyuan/AmazonNode/NodeServer/app/ServerWorker/index.js
 
 # Invoke the Forever module (to START our Node.js server).
 forever start -al forever.log -ao out.log -ae err.log $START_SCRIPT 3000
