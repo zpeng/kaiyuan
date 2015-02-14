@@ -17,8 +17,8 @@ app.get('/admin/home.js', browserify('./admin/home.js'));
 app.get('/client/map.js', browserify('./client/map.js'));
 
 // // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'html');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 
 app.use(favicon('./favicon.ico'));
 

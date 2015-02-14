@@ -21,8 +21,17 @@ http://localhost:8080/index.html
 ```
 cd kaiyuan/AmazonNode/scripts
 ./sshEC2.sh
-git clone https://github.com/zpeng/kaiyuan.git
 ```
+
+```
+cd kaiyuan/AmazonNode/scripts
+./foreverstop.sh
+git pull
+./foreverstart.sh
+```
+- 用forever start是因为我们退出ec2后 server仍要运行
+- 更新前要先把forever关掉
+
 
 # EC2 安装node环境
 
@@ -31,14 +40,20 @@ git clone https://github.com/zpeng/kaiyuan.git
 
 ### t2.micro Ubuntu
 
-public DNS 
 ```
+cd kaiyuan/AmazonNode/scripts
+./sshEC2.sh
+```
+sudo apt-get install build-essential
+sudo apt-get install git
 git clone https://github.com/zpeng/kaiyuan.git
-./kaiyuan/scripts/init.sh
+kaiyuan/AmazonNode/scripts/nodeInstall.sh
+sudp cp kaiyuan/AmazonNode/scripts/rc.local /etc/rc.local
 ```
-重启Instance
+修改rc.local的目的在于以后enable了balance loader后新的Instance能自动安装并启动node server
 
+- TODO: (不用密码) git pull 最新版本
+- cron task
 
-TODO: launch from our backup AMI
-
+### TODO: launch from our backup AMI
 
