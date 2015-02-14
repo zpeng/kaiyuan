@@ -51,6 +51,7 @@ sudo apt-get install git
 git clone https://github.com/zpeng/kaiyuan.git
 kaiyuan/AmazonNode/scripts/nodeInstall.sh
 sudo cp kaiyuan/AmazonNode/scripts/rc.local /etc/rc.local
+kaiyuan/AmazonNode/scripts/nodeLaunch.sh
 ```
 
 修改rc.local的目的在于以后enable了balance loader后新的Instance能自动安装并启动node server
