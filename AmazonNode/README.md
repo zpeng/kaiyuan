@@ -39,7 +39,7 @@ git pull
 不用，因为免费的instance type只能选t1.micro。我们可以自己安装在略强大的t2.micro上
 
 ### t2.micro Ubuntu
-
+绑定Elasitc IP 并更新 kaiyuan/AmazonNode/scripts/sshEC2.sh
 ```
 cd kaiyuan/AmazonNode/scripts
 ./sshEC2.sh
