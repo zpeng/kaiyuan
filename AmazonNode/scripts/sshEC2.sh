@@ -1,5 +1,5 @@
 #!/bin/bash
 
-DSN=ec2-54-213-85-14.us-west-2.compute.amazonaws.com
+DSN=54.213.152.139
 
 ssh -l ubuntu -i kaiyuan.pem $DSN

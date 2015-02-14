@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd kaiyuan/AmazonNode/NodeServer/scripts
-npm install
+cd ~/kaiyuan/AmazonNode/NodeServer
+sudo npm install
 bower install
-./foreverstart.sh
+~/kaiyuan/AmazonNode/NodeServer/scripts/foreverstart.sh
