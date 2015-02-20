@@ -55,6 +55,13 @@ app.use(function(req, res, next) {
     next(err);
 });
 
+
+// socket communication with client
+ioClient.of('/client').on('connection', function(socket){
+    console.log('socket connection with client established: '+ socket);
+    socket.emit('hello message', 'hi');
+});
+
 http.listen(port, function(){
     console.log('worker server is listening on *:'+port);
 });

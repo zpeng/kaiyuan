@@ -1,9 +1,17 @@
 'use strict';
 
 require('angular');
-var app = angular.module('MapApp', []);
+require('angular-socket-io');
+var app = angular.module('MapApp', ['btford.socket-io']);
 
-app.controller('MapCtrl', ['$scope', '$interval', function($scope, $interval) {
+app.factory('statSocket', function (socketFactory) {
+  return socketFactory({
+  	ioSocket: io.connect('http://54.213.152.139/client')
+  	// ioSocket: io.connect('http://localhost/client')  	
+  });
+});
+
+app.controller('MapCtrl', ['$scope', 'statSocket', '$interval', function($scope, socket, $interval) {
 	$scope.currentTime = new Date();
 	$interval(function(){
 		$scope.currentTime = new Date();
@@ -35,6 +43,14 @@ app.controller('MapCtrl', ['$scope', '$interval', function($scope, $interval) {
 	$scope.buttonClick = function() {
 		alert('button clicked when user is at ('+ $scope.user.longitude +',' +$scope.user.latitude+')');
 	}
+
+	socket.on('connect', function () {
+		console.log('socket connection with server established.');
+	});
+
+	socket.on('hello message', function (msg) {
+		alert('server says '+msg);
+	});
 
 }]);
 
