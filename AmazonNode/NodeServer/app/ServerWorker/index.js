@@ -15,6 +15,7 @@ var request = require('request'),
 // browserify.settings.mode = 'production';
 app.get('/admin/home.js', browserify('./admin/home.js'));
 app.get('/client/map.js', browserify('./client/map.js'));
+app.get('/supplier/supplier.js', browserify('./supplier/supplier.js'));
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
@@ -57,10 +58,7 @@ app.use(function(req, res, next) {
 
 
 // socket communication with client
-ioClient.of('/client').on('connection', function(socket){
-    console.log('socket connection with client established: '+ socket);
-    socket.emit('hello message', 'hi');
-});
+require('./services/services.js');
 
 http.listen(port, function(){
     console.log('worker server is listening on *:'+port);
